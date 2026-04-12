@@ -3,8 +3,8 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   lang: 'zh-CN', // 核心：声明网站语言为简体中文
-  title: "我的数字花园",
-  description: "个人知识库、机械设计与量化交易笔记",
+  title: "见素学习笔记",
+  description: "见素抱朴，记录成长",
   
   themeConfig: {
     // 1. 修改顶部导航栏
