@@ -2,8 +2,8 @@
 layout: home
 
 hero:
-  name: "我的数字花园"
-  text: "知识沉淀与工具库"
+  name: "见素学习笔记"
+  text: "见素抱朴，唯学日益"
   tagline: 记录量化交易、机械设计思路与代码笔记
   actions:
     - theme: brand
