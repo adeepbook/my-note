@@ -4,6 +4,8 @@ export default defineConfig({
   lang: 'zh-CN',
   title: "见素学习笔记",
   description: "记录量化交易、机械设计与思维感悟",
+  ignoreDeadLinks: true,
+  
 
   themeConfig: {
     // 导航栏
