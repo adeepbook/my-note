@@ -14,18 +14,36 @@ export default defineConfig({
       { text: '机械设计', link: '/mechanics/gear-design' } // 👈 新增的机械导航
     ],
 
-    // 2. 修改左侧目录树
+   // 2. 修改左侧目录树（多级嵌套版）
     sidebar: [
       {
-        text: '📈 量化交易笔记',
+        text: '📈 金融与量化学习',
+        collapsed: false, // 添加这个属性，允许折叠/展开，false代表默认展开
         items: [
-          { text: 'V5.0 AI接入复盘', link: '/quant/v5-record' } // 👈 关联你刚才写的文章
+          { text: '量化终端 V5.0 复盘', link: '/quant/v5-record' },
+          { text: '宏观经济与周期研判 (待写)', link: '/quant/macro' } // 预留新房间
         ]
       },
       {
-        text: '⚙️ 机械设计手稿',
+        text: '⚙️ 机械工程学习',
+        collapsed: false,
         items: [
-          { text: '齿轮传动设计 (待写)', link: '/mechanics/gear-design' } // 👈 给未来预留的空房间
+          // 下面开始建“小类”
+          {
+            text: '基础理论与设计', 
+            collapsed: false, 
+            items: [
+              { text: '齿轮传动设计基础', link: '/mechanics/gear-design' }
+            ]
+          },
+          {
+            text: '加工工艺与材料', // 这是你想要的板材、螺丝小类
+            collapsed: false,
+            items: [
+              { text: '钣金加工与工艺槽规范', link: '/mechanics/sheet-metal' },
+              { text: '螺栓强度校核与选型', link: '/mechanics/screw-strength' }
+            ]
+          }
         ]
       }
     ],
