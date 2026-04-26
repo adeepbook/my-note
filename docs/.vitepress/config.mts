@@ -2,36 +2,32 @@ import { defineConfig } from 'vitepress'
 import mathjax3 from 'markdown-it-mathjax3'
 
 // ==========================================
-// 🧩 第一部分：我的文章目录（分类更清爽！）
+// 🗄️ 第一部分：内容抽屉（以后只在这里加文章！）
 // ==========================================
 
-// 1. 量化交易文章
-const quantArticles = [
+// 📂 抽屉 1：金融领域
+const financeDrawer = [
+  // 金融目前没有分小类，直接放文章
   { text: '量化终端 V5.0 复盘', link: '/quant/v5-record' }
 ]
 
-// 2. 机械 - 基础理论文章
-const theoryArticles = [
+// 📂 抽屉 2：机械领域（极致扁平，直接放文章）
+const mechanicsDrawer = [
   { text: '齿轮传动设计基础', link: '/mechanics/gear-design' },
-  { text: '应力集中与疲劳分析', link: '/mechanics/stress-concentration' }
-]
-
-// 3. 机械 - 加工工艺文章
-const processArticles = [
+  { text: '应力集中与疲劳分析', link: '/mechanics/stress-concentration' },
   { text: '钣金加工与工艺槽规范', link: '/mechanics/sheet-metal' },
   { text: '螺栓强度校核与选型', link: '/mechanics/screw-strength' }
 ]
 
 // ==========================================
-// ⚙️ 第二部分：网站底层架构
+// ⚙️ 第二部分：底层框架（永远不需要改动）
 // ==========================================
 export default defineConfig({
   lang: 'zh-CN',
   title: "见素学习笔记",
   description: "记录量化交易、机械设计思路与思维感悟",
-  ignoreDeadLinks: true, // 免死金牌
+  ignoreDeadLinks: true,
 
-  // 激活数学公式渲染
   markdown: {
     config: (md) => {
       md.use(mathjax3)
@@ -45,22 +41,17 @@ export default defineConfig({
       { text: '机械设计', link: '/mechanics/gear-design' }
     ],
 
-    // 👇 重点看这里：把子标题全部提拔成了独立的大标题！
+    // 将上面的抽屉装进侧边栏
     sidebar: [
       {
-        text: '📈 金融与量化学习',
-        collapsed: false, // false 表示默认展开
-        items: quantArticles
+        text: '📈 金融与量化', // 大类标题
+        collapsed: false,
+        items: financeDrawer
       },
       {
-        text: '⚙️ 基础理论与设计', 
+        text: '⚙️ 机械工程',    // 大类标题
         collapsed: false,
-        items: theoryArticles
-      },
-      {
-        text: '🔨 加工工艺与材料', 
-        collapsed: false,
-        items: processArticles
+        items: mechanicsDrawer
       }
     ]
   }
